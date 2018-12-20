@@ -1,0 +1,11 @@
+.heading {
+  font-family: $secondary_font;
+  text-transform: uppercase;
+  font-size: calculateRem(18);
+  color: $color-white-light;
+  letter-spacing: 1.5px;
+
+  a {
+    color: inherit;
+  }
+}

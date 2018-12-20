@@ -1,0 +1,37 @@
+.navigation {
+  background-color: $color-primary;
+  padding: calculateRem(10);
+
+  &__branding {
+    height: 100%;
+    @include flex(0, 0, center);
+  }
+
+  &__nav {
+    height: 100%;
+    @include flex(0, flex-end, center);
+
+    ul {
+
+      li {
+        display: inline-block;
+        margin: calculateRem(5) calculateRem(5);
+        padding: 0 calculateRem(10);
+
+        a {
+          &:link,
+          &:visited {
+            text-transform: uppercase;
+            font-size: calculateRem(16);
+            color: $color-white-light;
+            font-weight: 600;
+          }
+
+          &:hover {
+            color: $color-dark-text;
+          }
+        }
+      }
+    }
+  }
+}

@@ -15,5 +15,11 @@ Text Domain: bigbum
 
 @import 'base/base';
 @import 'base/wordpress';
+@import 'base/typography';
+
+@import 'modules/slider';
+
+@import 'page/navigation';
+@import 'page/footer';
 
 @import 'layout/grid';

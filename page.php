@@ -14,27 +14,37 @@
 
 get_header();
 ?>
-
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+			<?php
+			// check if the repeater field has rows of data
+			if( have_rows( 'slick_slide' ) ):
 
-			get_template_part( 'template-parts/content', 'page' );
+			echo "<ul class='slider-main'>";
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
+			// loop through the rows of data
+			while ( have_rows( 'slick_slide' ) ) : the_row();
+				 $image = get_sub_field( 'slick_image' );
+				 $imageUrl = $image['url'];
+				 $title = get_sub_field( 'slick_title' );
+				 $link = get_sub_field( 'slick_link' );
+
+				 echo '<li class="slider-main__slide" style="background-image: url('. $imageUrl .');">
+				 				<div class="slider-main__title">
+									<h2 class="heading"><a href="' . $link . '">' . $title .'</a></h2>
+								</div>
+							</li>';
+
+			endwhile;
+			echo "</ul>";
+
 			endif;
-
-		endwhile; // End of the loop.
-		?>
+			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+
 get_footer();

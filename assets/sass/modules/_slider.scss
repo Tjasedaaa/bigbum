@@ -1,0 +1,66 @@
+.slider {
+
+  &-main {
+    height: 80vh;
+    min-height: 600px;
+    width: 100%;
+
+    &__slide {
+      height: 100%;
+      background-size: cover;
+
+      &::before {
+        content: '';
+        height: 80vh;
+        min-height: 600px;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        background-color: rgba($color-black, .5);
+      }
+    }
+
+    &__title {
+      position: absolute;
+      z-index: 850;
+      bottom: 100px;
+      right: 300px;
+      display: inline-block;
+      background-color: rgba($color-black, .5);
+
+      h2 {
+        padding: 15px 20px;
+
+        a {
+          padding: inherit;
+        }
+      }
+    }
+  }
+}
+
+.slick-list {
+  height: 100%;
+}
+
+.slick-track {
+  height: 100%;
+}
+
+.slickArrow {
+  position: absolute;
+  top: 45%;
+  z-index: 1000;
+  color: $color-white-light;
+  font-size: 80px;
+
+  &--prev {
+    left: 40px;
+  }
+
+  &--next {
+    right: 40px;
+  }
+}
