@@ -1,0 +1,32 @@
+.products-list {
+
+  &__card {
+    margin: 0 calculateRem(40);
+    @include flex(column, 0, center);
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__price {
+    display: inline-block;
+    line-height: 2;
+    color: $color-secondary;
+    font-weight: bold;
+
+    &:not(:last-child) {
+      padding-right: calculateRem(20);
+    }
+
+    &--discounted {
+      text-decoration: line-through;
+      font-style: italic;
+      color: rgba($color-dark-text, .5);
+    }
+  }
+}
+
+.card-body {
+  width: 100%;
+}

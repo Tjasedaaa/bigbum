@@ -17,6 +17,7 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
+			<!-- SLICK SLIDER -->
 			<?php
 			// check if the repeater field has rows of data
 			if( have_rows( 'slick_slide' ) ):
@@ -40,7 +41,14 @@ get_header();
 			echo "</ul>";
 
 			endif;
-			?>
+			?><!-- end of Slick Slider -->
+
+			<?php
+	    while ( have_posts() ) : the_post();
+	    	the_content();
+	    endwhile;
+	    wp_reset_query();
+	    ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

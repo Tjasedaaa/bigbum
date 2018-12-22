@@ -9,3 +9,32 @@
     color: inherit;
   }
 }
+
+.secondary-heading {
+  font-family: $secondary_font;
+  text-transform: uppercase;
+  font-size: calculateRem(18);
+  color: $color-dark-text;
+  letter-spacing: 1.5px;
+
+  a {
+    color: inherit;
+  }
+}
+
+.tertiary-heading {
+  font-family: $primary_font;
+  text-transform: uppercase;
+  font-size: calculateRem(16);
+  color: $color-dark-text;
+  letter-spacing: 1.5px;
+
+  a {
+    color: inherit;
+    transition: color .2s ease-out;
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+}

@@ -16,10 +16,13 @@ Text Domain: bigbum
 @import 'base/base';
 @import 'base/wordpress';
 @import 'base/typography';
+@import 'base/utilities';
 
 @import 'modules/slider';
+@import 'modules/product';
 
 @import 'page/navigation';
 @import 'page/footer';
+@import 'page/page';
 
 @import 'layout/grid';

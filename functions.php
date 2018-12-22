@@ -169,3 +169,55 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * Register custom image size
+ */
+add_image_size( 'productCard', 500, 450, true );
+
+/**
+ * Register all shortcodes
+ *
+ * @return null
+ */
+function bigbum_register_shortcodes() {
+  add_shortcode( 'products_list_cards', 'bigbum_shortcode_products_list_cards' );
+}
+
+add_action( 'init', 'bigbum_register_shortcodes' );
+
+/**
+ * Products List Cards Shortcode Callback
+ * - [products_list_cards title='']
+ *
+ * @param Array $atts
+ *
+ * @return string
+ */
+function bigbum_shortcode_products_list_cards( $atts ) {
+	$atts = shortcode_atts( array(
+			'title' => ''
+	), $atts );
+
+	$randomProducts = new WP_Query( array(
+		'post_type' => 'product',
+		'posts_per_page' => 3,
+		'orderby' => 'rand'
+	) );
+
+	echo '<section class="section products-list">
+					<h2 class="secondary-heading u-margin-bottom-medium u-text-center">' . $atts['title'] . '</h2>
+					<div class="container">
+						<div class="grid">';
+
+	while( $randomProducts -> have_posts() ) {
+		$randomProducts -> the_post();
+
+		get_template_part( 'template-parts/products-list', 'cards' );
+
+	}
+
+	echo '</div></div></section>';
+	
+	wp_reset_postdata();
+}
