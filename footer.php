@@ -17,11 +17,11 @@
 		<div class="contain grid">
 			<div class="col-auto">
 				<div class="site-info">
-						<?php
-						$theme_author = wp_get_theme( 'bigbum' )['Author'];
-						$year = get_the_time( 'Y' );
-						?>
-						<p class="u-text-center">Copyright <?php echo $theme_author; ?>, <?php echo $year; ?></p>
+					<?php
+					$theme_author = wp_get_theme( 'bigbum' )['Author'];
+					$year = get_the_time( 'Y' );
+					?>
+					<p class="u-text-center">Copyright <?php echo $theme_author; ?>, <?php echo $year; ?></p>
 				</div><!-- .site-info -->
 			</div>
 		</div>
