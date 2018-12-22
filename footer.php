@@ -17,7 +17,7 @@
 		<div class="contain grid">
 			<div class="col-auto">
 				<div class="site-info">
-						<p class="u-text-center">Copyright <?php echo wp_get_theme( 'bigbum' )['Author']; ?>, <?php the_time( 'Y' ); ?></p>
+						<p class="u-text-center">Copyright Tjasa, <?php the_time( 'Y' ); ?></p>
 				</div><!-- .site-info -->
 			</div>
 		</div>
