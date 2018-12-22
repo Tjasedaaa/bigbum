@@ -17,17 +17,11 @@
 		<div class="contain grid">
 			<div class="col-auto">
 				<div class="site-info">
-					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'bigbum' ) ); ?>">
 						<?php
-						/* translators: %s: CMS name, i.e. WordPress. */
-						printf( esc_html__( 'Proudly powered by %s', 'bigbum' ), 'WordPress' );
+						$theme_author = wp_get_theme( 'bigbum' )['Author'];
+						$year = get_the_time( 'Y' );
 						?>
-					</a>
-					<span class="sep"> | </span>
-						<?php
-						/* translators: 1: Theme name, 2: Theme author. */
-						printf( esc_html__( 'Theme: %1$s by %2$s.', 'bigbum' ), 'bigbum', '<a href="http://underscores.me/">Tjasa</a>' );
-						?>
+						<p class="u-text-center">Copyright <?php echo $theme_author; ?>, <?php echo $year; ?></p>
 				</div><!-- .site-info -->
 			</div>
 		</div>
